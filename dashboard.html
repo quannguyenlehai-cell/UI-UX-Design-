@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Lock Dashboard</title>
+<link rel="stylesheet" href="style.css">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+<button class="back"><i class="fa fa-arrow-left"></i> Back to Lock</button>
+
+<div>
+<h1>Dashboard</h1>
+<p>Smart Lock Control Center</p>
+</div>
+
+<button class="settings"><i class="fa fa-shield"></i> Settings</button>
+</header>
+
+<div class="cards">
+
+<div class="card">
+<h3>Lock Status</h3>
+<p class="lock"><i class="fa fa-lock"></i> Locked</p>
+</div>
+
+<div class="card">
+<h3>Authorized Users</h3>
+<p><i class="fa fa-users"></i> 3</p>
+</div>
+
+<div class="card">
+<h3>Successful Access</h3>
+<p class="success"><i class="fa fa-check-circle"></i> 2</p>
+</div>
+
+<div class="card">
+<h3>Denied Attempts</h3>
+<p class="denied"><i class="fa fa-times-circle"></i> 1</p>
+</div>
+
+</div>
+
+
+<div class="main">
+
+<div class="activity">
+
+<h2>Recent Activity</h2>
+
+<div class="item">
+<div>
+<strong>John Doe</strong>
+<p>18 minutes ago</p>
+</div>
+
+<div class="tag">
+<span class="method">facial</span>
+<span class="ok">success</span>
+</div>
+</div>
+
+
+<div class="item">
+<div>
+<strong>Sarah Smith</strong>
+<p>about 2 hours ago</p>
+</div>
+
+<div class="tag">
+<span class="method">voice</span>
+<span class="ok">success</span>
+</div>
+</div>
+
+
+<div class="item">
+<div>
+<strong>Unknown</strong>
+<p>about 5 hours ago</p>
+</div>
+
+<div class="tag">
+<span class="method">facial</span>
+<span class="fail">denied</span>
+</div>
+</div>
+
+</div>
+
+
+<div class="users">
+
+<h2>Authorized Users</h2>
+
+<div class="user">
+<img src="https://i.pravatar.cc/40?img=1">
+<div>
+<strong>John Doe</strong>
+<p>Face • Voice</p>
+</div>
+</div>
+
+<div class="user">
+<img src="https://i.pravatar.cc/40?img=5">
+<div>
+<strong>Sarah Smith</strong>
+<p>Face • Voice</p>
+</div>
+</div>
+
+<div class="user">
+<img src="https://i.pravatar.cc/40?img=8">
+<div>
+<strong>Mike Johnson</strong>
+<p>Voice</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+
+
+
+<style>
+    body{
+font-family: Arial;
+background: linear-gradient(135deg,#0f172a,#1e293b);
+color:white;
+margin:0;
+}
+
+.container{
+padding:30px;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:30px;
+}
+
+button{
+background:#334155;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+margin-bottom:30px;
+}
+
+.card{
+background:#334155;
+padding:20px;
+border-radius:15px;
+}
+
+.lock{
+color:#ff4d4d;
+font-size:20px;
+}
+
+.success{
+color:#22c55e;
+font-size:20px;
+}
+
+.denied{
+color:#ef4444;
+font-size:20px;
+}
+
+.main{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:25px;
+}
+
+.activity,.users{
+background:#334155;
+padding:20px;
+border-radius:15px;
+}
+
+.item{
+display:flex;
+justify-content:space-between;
+background:#475569;
+padding:12px;
+margin-top:10px;
+border-radius:10px;
+}
+
+.tag span{
+padding:3px 8px;
+border-radius:6px;
+font-size:12px;
+}
+
+.method{
+background:#64748b;
+}
+
+.ok{
+background:#22c55e;
+}
+
+.fail{
+background:#ef4444;
+}
+
+.user{
+display:flex;
+align-items:center;
+gap:10px;
+margin-top:15px;
+background:#475569;
+padding:10px;
+border-radius:10px;
+}
+
+.user img{
+border-radius:50%;
+}
+</style>
+
+<script>
+function toggleLock(){
+
+let lockText = document.querySelector(".lock")
+
+if(lockText.innerText.includes("Locked")){
+lockText.innerHTML = '<i class="fa fa-unlock"></i> Unlocked'
+lockText.style.color = "#22c55e"
+}
+else{
+lockText.innerHTML = '<i class="fa fa-lock"></i> Locked'
+lockText.style.color = "#ff4d4d"
+}
+
+}
+</script>
